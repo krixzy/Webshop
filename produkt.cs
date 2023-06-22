@@ -29,21 +29,20 @@ namespace Webshop
                {
                   string query = $"INSERT INTO product VALUES('{name}', '{amount}', '{order_id}')";
 
-                  Connect.executeConnection(query);
+                  Connect.ExecuteSqlcommand(query);
                }
                catch (Exception ex)
                {
 
                }
             }
-         public static List<produkt> ViewProduct(int id)
+         public static List<produkt> GetProduct(int id)
          {
              List<produkt> products = new List<produkt>();
              
               
-             string query = @"SELECT product.id, name, amount, order_id FROM product JOIN orders ON @id = product.order_id";
-             SqlDataReader reader = Connect.makeConnection(query, id);
-             reader.Read();
+             string query = @"SELECT product.id, name, amount, order_id FROM product WHERE @id = product.order_id";
+             SqlDataReader reader = Connect.GetDataReaderFromSql(query, id);
              if (reader.HasRows)
              { 
                  while (reader.Read())

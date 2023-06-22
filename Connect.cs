@@ -9,7 +9,7 @@ using System.Data;
 public static class Connect
 {
    //public static SqlConnection connection = new SqlConnection("Data Source=DESKTOP-I5TRKAB\\SQLEXPRESS;Initial Catalog=Webshop;Integrated Security=True");
-    public static SqlDataReader makeConnection (string query, int id)
+    public static SqlDataReader GetDataReaderFromSql (string query, int id)
     {
     
             string connectionString = GetConnectionString();
@@ -29,7 +29,7 @@ public static class Connect
             
      }
 
-    public static void executeConnection(string query, SqlCommand inCommand = null)
+    public static void ExecuteSqlcommand(string query, SqlCommand inCommand = null)
     {
 
         string connectionString = GetConnectionString();

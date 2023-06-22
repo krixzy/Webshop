@@ -37,7 +37,7 @@ namespace Webshop
               {
                       string query = $"INSERT INTO Customer VALUES('{name}', '{address}', '{phone}', '{email}')";
 
-                      Connect.executeConnection(query);
+                      Connect.ExecuteSqlcommand(query);
 
 
             }
@@ -59,7 +59,7 @@ namespace Webshop
                       SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
                       updateCmd.Parameters.AddWithValue("@newName", newName);
                       updateCmd.Parameters.AddWithValue("@email", email);
-                      Connect.executeConnection(updateQuery, updateCmd);
+                      Connect.ExecuteSqlcommand(updateQuery, updateCmd);
                       this.name = newName;
                       conn.Close();
               }
@@ -68,20 +68,20 @@ namespace Webshop
                 Console.WriteLine(ex.Message);
               }
           }
-        public static Customer ViewCustomer(int id)
+        public static Customer GetCustomer(int id)
         {
 
 
             //this.openConnection();
             string query = @"SELECT id, name, address, phone, email FROM customer WHERE id = @id";
-            SqlDataReader dr = Connect.makeConnection(query, id);
+            SqlDataReader dr = Connect.GetDataReaderFromSql(query, id);
             dr.Read();
             int customerid = dr.GetInt32(0);
             string name = dr.GetString(1);
             string address = dr.GetString(2);
             int phone = dr.GetInt32(3);
             string email = dr.GetString(4);
-            return new Customer(name, address, phone, email, Order.ViewOrderList(id), customerid);
+            return new Customer(name, address, phone, email, Order.GetOrderList(id), customerid);
 
         }
         public override String ToString()

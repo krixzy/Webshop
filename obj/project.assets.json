@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\programmering\\Visualstudio apps\\Webshop\\Webshop.csproj",
+      "projectUniqueName": "F:\\programmering\\Visualstudio apps\\webshop\\Webshop\\Webshop.csproj",
       "projectName": "Webshop",
-      "projectPath": "F:\\programmering\\Visualstudio apps\\Webshop\\Webshop.csproj",
+      "projectPath": "F:\\programmering\\Visualstudio apps\\webshop\\Webshop\\Webshop.csproj",
       "packagesPath": "C:\\Users\\morte\\.nuget\\packages\\",
-      "outputPath": "F:\\programmering\\Visualstudio apps\\Webshop\\obj\\",
+      "outputPath": "F:\\programmering\\Visualstudio apps\\webshop\\Webshop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

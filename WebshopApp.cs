@@ -17,7 +17,7 @@ namespace Webshop
 
           
             string query = @"SELECT name, address, phone, Email FROM customer WHERE id = @id";
-            SqlDataReader dr = Connect.makeConnection(query,id);
+            SqlDataReader dr = Connect.GetDataReaderFromSql(query,id);
             if(dr.HasRows)
             {
                 while (dr.Read())
@@ -40,7 +40,7 @@ namespace Webshop
 
                 string query = $"INSERT INTO Customer VALUES('{customer.name}', '{customer.address}', '{customer.phone}', '{customer.email}')";
 
-                Connect.executeConnection(query);
+                Connect.ExecuteSqlcommand(query);
 
             }
             catch (Exception ex)
@@ -53,12 +53,12 @@ namespace Webshop
             
             string query = $"DELETE FROM customer WHERE id = '{id}'";
 
-            Connect.executeConnection(query);
+            Connect.ExecuteSqlcommand(query);
         }
 
         public Customer GetCustomer(int id)
         {
-           Customer customer = Customer.ViewCustomer(id);
+           Customer customer = Customer.GetCustomer(id);
             Console.WriteLine(customer);
             return customer;
         }

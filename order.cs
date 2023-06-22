@@ -34,7 +34,7 @@ namespace Webshop
             {
                 string query = $"INSERT INTO orders VALUES('{weight}', '{date}', '{delivery_address}', '{customer_id}') ";
 
-                Connect.executeConnection(query);
+                Connect.ExecuteSqlcommand(query);
             }
             catch (Exception ex)
             {
@@ -63,13 +63,12 @@ namespace Webshop
                 Console.WriteLine (ex.ToString());
             }
         }*/
-        public static List<Order> ViewOrderList(int id)
+        public static List<Order> GetOrderList(int id)
         {
             List<Order> orders = new List<Order>();
     
-            string query = @"SELECT orders.id, weight, date, delivery_address, customer_id FROM orders JOIN customer ON @id = orders.customer_id";
-            SqlDataReader reader = Connect.makeConnection(query, id);
-            reader.Read();
+            string query = @"SELECT  * from orders where customer_id=@id";
+            SqlDataReader reader = Connect.GetDataReaderFromSql(query, id);
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -79,7 +78,7 @@ namespace Webshop
                     string date = reader.GetString(2);
                     string deliveryAddress = reader.GetString(3);
                     int customer_id = reader.GetInt32(4);
-                    Order order = new Order(weight, date, deliveryAddress, customer_id,produkt.ViewProduct(orderid), orderid);
+                    Order order = new Order(weight, date, deliveryAddress, customer_id,produkt.GetProduct(orderid), orderid);
                     orders.Add(order);
                 }
             }

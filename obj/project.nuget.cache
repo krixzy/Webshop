@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IPskGxRI6nEIkbJgR3nHnUGqqIjvE+VhRgkk6wB9hmFRHDfBNubW2mABDqZ8TgZhFfVQByL6yuY3MfyOASQiig==",
+  "dgSpecHash": "urg18LRwtwL4HwGf0d89OB+k+XTYmWrt2vZNhFaWdMniCpll4VoQIkXuiwSlPZfll1VkTPQix4dItWcQQn4k0w==",
   "success": true,
-  "projectFilePath": "F:\\programmering\\Visualstudio apps\\Webshop\\Webshop.csproj",
+  "projectFilePath": "F:\\programmering\\Visualstudio apps\\webshop\\Webshop\\Webshop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\morte\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\morte\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
