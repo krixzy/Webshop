@@ -59,7 +59,7 @@ namespace Webshop
         public Customer GetCustomer(int id)
         {
            Customer customer = Customer.GetCustomer(id);
-            Console.WriteLine(customer);
+            Console.WriteLine(customer.orders[1].produkts[0].amount);
             return customer;
         }
     }

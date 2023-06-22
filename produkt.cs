@@ -12,7 +12,7 @@ namespace Webshop
     {
         int? id;
         string name;
-        int amount;
+       public int amount;
         int order_id;
         public produkt(string name, int amount, int order_id, int? id = null)
         {
